@@ -70,8 +70,6 @@ namespace Shooters
         private void add_player()
         {
 
-            Image img = Properties.Resources.up;
-            player.Image = img;
             player.Name = "hero";
             player.Size = new Size(90, 90);
             player.Location = new Point(50, 50);
@@ -107,7 +105,6 @@ namespace Shooters
          
             ammo.BackgroundImageLayout = ImageLayout.Zoom;
             ammo.BackColor = Color.Transparent;
-            ammo.Image = Properties.Resources.ammo_Image;
             Controls.Add(ammo);
             ammo_drop = true;
          if (health_pack == 0)
@@ -119,7 +116,6 @@ namespace Shooters
                 health.Top = rand1.Next(200, ClientSize.Height - 30);
                 health.BackgroundImageLayout = ImageLayout.Zoom;
                 health.BackColor = Color.Transparent;
-                health.Image = Properties.Resources.health;
                 Controls.Add(health);
                 health_pack = 3;
 
@@ -133,7 +129,6 @@ namespace Shooters
         private void fire_up()
         {
             PictureBox fire = new PictureBox();
-            fire.Image = Properties.Resources.fireup;
             fire.Name = "fire1";
             fire.Size = new Size(15, 15);
             fire.Location = new Point((player.Width / 2) + (player.Left - 20), player.Top - 3);
@@ -144,7 +139,6 @@ namespace Shooters
         private void fire_down()
         {
             PictureBox fire = new PictureBox();
-            fire.Image = Properties.Resources.fireup;
             fire.Name = "fire2";
             fire.Size = new Size(15, 19);
             fire.Location = new Point((player.Width / 2) + (player.Left - 22), player.Top + 25);
@@ -155,7 +149,6 @@ namespace Shooters
         private void fire_left()
         {
             PictureBox fire = new PictureBox();
-            fire.Image = Properties.Resources.fireleft;
             fire.Name = "fire3";
             fire.Size = new Size(15, 15);
             fire.Location = new Point((player.Width / 2) + (player.Left - 15), player.Top + 22);
@@ -168,7 +161,6 @@ namespace Shooters
         private void fire_right()
         {
             PictureBox fire = new PictureBox();
-            fire.Image = Properties.Resources.fireright;
             fire.Name = "fire4";
             fire.Size = new Size(19, 15);
             fire.Location = new Point(player.Right + 10, player.Bottom - (player.Height / 2)-20);
@@ -182,8 +174,6 @@ namespace Shooters
             {
                 if (i == 0)
                 {
-                    Image img = Properties.Resources.zup;
-                    enemy1.Image = img;
                     enemy1.Name = "enemy1";
                     enemy1.Size = new Size(90, 90);
                     System.Random rand = new Random();
@@ -194,8 +184,6 @@ namespace Shooters
                 }
                 else if (i == 1)
                 {
-                    Image img = Properties.Resources.zup;
-                    enemy2.Image = img;
                     enemy2.Name = "enemy2";
                     enemy2.Size = new Size(90, 90);
                     System.Random rand = new Random();
@@ -206,8 +194,6 @@ namespace Shooters
                 }
                 if (i == 2)
                 {
-                    Image img = Properties.Resources.zup;
-                    enemy3.Image = img;
                     enemy3.Name = "enemy3";
                     enemy3.Size = new Size(90, 90);
                     System.Random rand = new Random();
@@ -738,7 +724,6 @@ namespace Shooters
             {
                 timer1.Stop();
                 
-                player.Image = Properties.Resources.dead;
                 player.Width = 120;
                 player.BackgroundImageLayout = ImageLayout.Zoom;
                 p.Kills = kills;
@@ -760,8 +745,7 @@ namespace Shooters
                         p.Size = new Size(260, 260);
                         p.BackgroundImageLayout = ImageLayout.Zoom;
                         p.BackColor = Color.Transparent;
-                        p.BackgroundImage= Properties.Resources.congo;
-                        p.Image = Properties.Resources.trophy_transparent;
+    
                         Controls.Add(p);
                         PictureBox pg = new PictureBox();
                         pg.Name = "gif";
@@ -770,7 +754,6 @@ namespace Shooters
                         pg.Width = 1000;
                         pg.BackgroundImageLayout = ImageLayout.Stretch;
                         pg.BackColor = Color.Transparent;
-                        pg.Image = Properties.Resources.congo;
                         Controls.Add(pg);
                        
                         MessageBox.Show("Congratulations for : " + kills + "  KILLS");
@@ -795,8 +778,7 @@ namespace Shooters
                     p.Size = new Size(260, 260);
                     p.BackgroundImageLayout = ImageLayout.Center;
                     p.BackColor = Color.Transparent;
-                    p.BackgroundImage= Properties.Resources.congo;
-                    p.Image = Properties.Resources.trophy_transparent;
+
 
 
                     Controls.Add(p);
@@ -807,7 +789,7 @@ namespace Shooters
                     pg.Height = 1000;
                     pg.BackgroundImageLayout = ImageLayout.Center;
                     pg.BackColor = Color.Transparent;
-                    pg.Image = Properties.Resources.congo;
+
                     Controls.Add(pg);
                     MessageBox.Show("Congratulations for : " + kills + "  KILLS");
 
@@ -871,21 +853,18 @@ namespace Shooters
             {
                 left = true;
                 player.Image = null;
-                player.Image = Properties.Resources.left;
                 direction = "left";
             }
            if (e.KeyCode == Keys.Right&& playerhealth.Value>0)
             {
                 right = true;
                 player.Image = null;
-                player.Image = Properties.Resources.right;
                 direction = "right";
             }
             if (e.KeyCode == Keys.Up&& playerhealth.Value>0)
             {
                 up = true;
                 player.Image = null;
-                player.Image = Properties.Resources.up;
                 direction = "up";
 
             }
@@ -893,7 +872,6 @@ namespace Shooters
             {
                 down = true;
                 player.Image = null;
-                player.Image = Properties.Resources.down;
 
 
                 direction = "down";
@@ -1015,25 +993,21 @@ namespace Shooters
                     if (c.Top < player.Top)
                     {
                         c.Top += 3;
-                        enemy1.Image = Properties.Resources.zdown;
 
                     }
                     if (c.Left < player.Left)
                     {
                         c.Left += 3;
-                        enemy1.Image = Properties.Resources.zright;
 
                     }
                     if (c.Top > player.Top)
                     {
                         c.Top -= 3;
-                        enemy1.Image = Properties.Resources.zup;
 
                     }
                     if (c.Left > player.Left)
                     {
                         c.Left -= 3;
-                        enemy1.Image = Properties.Resources.zleft;
 
                     }
 
@@ -1044,25 +1018,21 @@ namespace Shooters
                     if (c.Top < player.Top)
                     {
                         c.Top += 3;
-                        enemy2.Image = Properties.Resources.zdown;
 
                     }
                     if (c.Left < player.Left)
                     {
                         c.Left += 3;
-                        enemy2.Image = Properties.Resources.zright;
 
                     }
                     if (c.Top > player.Top)
                     {
                         c.Top -= 3;
-                        enemy2.Image = Properties.Resources.zup;
 
                     }
                     if (c.Left > player.Left)
                     {
                         c.Left -= 3;
-                        enemy2.Image = Properties.Resources.zleft;
 
                     }
                 }
@@ -1072,25 +1042,21 @@ namespace Shooters
                     if (c.Top < player.Top)
                     {
                         c.Top += 3;
-                        enemy3.Image = Properties.Resources.zdown;
 
                     }
                     if (c.Left < player.Left)
                     {
                         c.Left += 3;
-                        enemy3.Image = Properties.Resources.zright;
 
                     }
                     if (c.Top > player.Top)
                     {
                         c.Top -= 3;
-                        enemy3.Image = Properties.Resources.zup;
 
                     }
                     if (c.Left > player.Left)
                     {
                         c.Left -= 3;
-                        enemy3.Image = Properties.Resources.zleft;
 
                     }
                 }

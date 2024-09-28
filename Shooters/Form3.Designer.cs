@@ -43,7 +43,6 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::Shooters.Properties.Resources.resizedImage;
             this.pictureBox1.Location = new System.Drawing.Point(1165, 683);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 83);
@@ -154,7 +153,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.BackgroundImage = global::Shooters.Properties.Resources.background2;
             this.ClientSize = new System.Drawing.Size(1381, 799);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.btnEnter);

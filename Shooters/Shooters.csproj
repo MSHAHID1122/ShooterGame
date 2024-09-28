@@ -205,7 +205,7 @@
     <None Include="Properties\Resources\health.png" />
     <None Include="Properties\Resources\congo.gif" />
     <None Include="Properties\Resources\trophy_transparent.png" />
-    <None Include="Properties\Resources\explosive.png" />
+    <None Include="Resources\explosive.png" />
     <Content Include="trophy_transparent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
